@@ -1,5 +1,4 @@
 import FeatureList from "../ui/FeatureList.jsx"
-import Figure from "../ui/Figure.jsx"
 import SectionHeading from "../ui/SectionHeading.jsx"
 
 const ITEMS = [
@@ -13,23 +12,27 @@ const ITEMS = [
 
 export default function UniqueNeedsSection() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-16 sm:py-24">
       <div className="container-1200 flex flex-col items-center gap-12">
-        <SectionHeading
-          title="Have a Unique Needs Learner?"
-          className="max-w-[640px]"
-        />
-        <p className="-mt-8 max-w-[560px] text-center text-body text-ink-soft">
-          Experience the #1 best program for neurodivergent students! Designed
-          with uniqueness in mind!
-        </p>
+        <div className="flex flex-col items-center gap-4 text-center">
+          <SectionHeading title="Have a Unique Needs Learner?" />
+          <p className="max-w-[560px] text-body text-ink-soft">
+            Experience the #1 best program for neurodivergent students! Designed
+            with uniqueness in mind!
+          </p>
+        </div>
 
-        <div className="grid w-full items-center gap-12 md:grid-cols-2">
-          <FeatureList items={ITEMS} variant="underline" className="max-w-[440px]" />
-          <Figure
-            src=""
-            alt="Child reaching up during a hands-on lesson"
-            className="aspect-[4/3] w-full"
+        <div className="grid w-full items-center gap-12 lg:grid-cols-2">
+          <FeatureList
+            items={ITEMS}
+            variant="blue"
+            className="mx-auto max-w-[440px]"
+          />
+          <img
+            src="/images/uniqueneeds-child.jpg"
+            alt="A child reaching up excitedly during a one-on-one lesson"
+            loading="lazy"
+            className="mx-auto w-full max-w-[540px]"
           />
         </div>
       </div>
