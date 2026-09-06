@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  Museo Sans is a licensed font. Drop the .woff2 files into src/assets/fonts/
+  and these @font-face rules will pick them up. Until then the fallback stack
+  (Avenir Next / Century Gothic / system) is used.
+*/
+@font-face {
+  font-family: "Museo Sans";
+  src: url("./assets/fonts/MuseoSans-300.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("./assets/fonts/MuseoSans-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("./assets/fonts/MuseoSans-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("./assets/fonts/MuseoSans-900.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Museo Sans", "Avenir Next", "Century Gothic", system-ui, sans-serif;
+
+  /* colors from Figma */
+  --color-ink: #1f2937;
+  --color-ink-soft: #374151;
+  --color-brand-orange: #d97139;
+  --color-brand-orange-shadow: #843e19;
+  --color-brand-yellow: #ffcc00;
+  --color-brand-purple: #5e328b;
+  --color-brand-blue: #3988c4;
+  --color-brand-purple-soft: #cab9db;
+  --color-lime: #97c93d;
+  --color-cream: #fdf2ea;
+  --color-sky-soft: #eef4fb;
+
+  /* type scale from Figma — fluid so it scales down on small screens */
+  --text-h1: clamp(2.5rem, 7vw, 4.375rem);   /* 40 → 70 / 80 */
+  --text-h1--line-height: 1.14;
+  --text-h1--font-weight: 900;
+  --text-h1--letter-spacing: 0.02em;
+
+  --text-sub-h1: clamp(1.125rem, 2.6vw, 1.625rem);  /* 18 → 26 / 36 */
+  --text-sub-h1--line-height: 1.4;
+  --text-sub-h1--font-weight: 300;
+
+  --text-h2: clamp(1.875rem, 4.4vw, 2.75rem);  /* 30 → 44 */
+  --text-h2--line-height: 1.2;
+  --text-h2--font-weight: 900;
+
+  --text-h4: clamp(1.25rem, 2.4vw, 1.5rem);   /* 20 → 24 / 34 */
+  --text-h4--line-height: 1.42;
+  --text-h4--font-weight: 700;
+
+  --text-h5: 1.25rem;          /* 20 / 30 */
+  --text-h5--line-height: 1.875rem;
+  --text-h5--font-weight: 500;
+
+  --text-body: 1.125rem;       /* 18 / 28 */
+  --text-body--line-height: 1.75rem;
+  --text-body--font-weight: 300;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+}
+
+/* shared helpers */
+@utility container-1200 {
+  width: 100%;
+  max-width: 75rem; /* 1200 */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
